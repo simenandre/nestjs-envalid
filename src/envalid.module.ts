@@ -51,11 +51,21 @@ export interface EnvalidModuleConfig<T> {
    * See: https://docs.nestjs.com/modules#global-modules
    */
   isGlobal?: boolean;
+
+  /**
+   * use dotenv to fill process.env
+   * See: https://github.com/motdotla/dotenv
+   */
+  useDotenv?: boolean;
 }
 
 @Module({})
 export class EnvalidModule {
   static forRoot<T>(config: EnvalidModuleConfig<T>): DynamicModule {
+    if (config.useDotenv) {
+      /* eslint-disable-next-line @typescript-eslint/no-var-requires */
+      require('dotenv').config();
+    }
     const { isGlobal, environment = process.env, options } = config;
     let { validators } = config;
     if ('_specs' in validators) {
