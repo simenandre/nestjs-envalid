@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "strict": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "declaration": true,
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "outDir": "dist"
+  },
+  "include": ["src", "tests"],
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*"
+  ]
+}

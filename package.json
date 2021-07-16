@@ -1,0 +1,49 @@
+{
+  "name": "nestjs-envalid",
+  "version": "1.0.0",
+  "repository": "git@github.com:cobraz/nestjs-envalid.git",
+  "author": "Simen A. W. Olsen",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=8.12"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/plugin.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/main.ts",
+    "test": "jest --coverage",
+    "lint": "eslint ."
+  },
+  "eslintConfig": {
+    "extends": "@indivorg/eslint-config"
+  },
+  "devDependencies": {
+    "@indivorg/eslint-config": "^1.0.4",
+    "@nestjs/common": "7.6.15",
+    "@nestjs/core": "7.6.15",
+    "@nestjs/platform-express": "^8.0.4",
+    "@nestjs/testing": "^7.5.5",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^14",
+    "envalid": "^7.1.1",
+    "eslint": "^7.30.0",
+    "jest": "^27.0.6",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.2",
+    "reflect-metadata": "0.1.13",
+    "ts-jest": "^27.0.3",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "peerDependencies": {
+    "envalid": "^7"
+  },
+  "volta": {
+    "node": "14.15.0",
+    "yarn": "1.22.10"
+  },
+  "dependencies": {}
+}
