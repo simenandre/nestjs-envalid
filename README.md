@@ -27,7 +27,7 @@
 ## Quickstart
 
 ```sh
-yarn add nestjs-envalid
+yarn add nestjs-envalid envalid
 ```
 
 To improve readability you can configure the variables in a separate file named
@@ -69,6 +69,25 @@ export class SomeService {
   }
 }
 ```
+
+## Add support for dotenv
+
+You'll need to install `dotenv`. 
+
+```sh
+yarn add dotenv
+```
+
+Next, just set `useDotenv` to `true`
+
+```typescript
+import { validators } from './config';
+@Module({
+  imports: [EnvalidModule.forRoot({ validators, useDotenv: true })],
+})
+export class AppModule {}
+```
+
 
 ## Contributing
 
