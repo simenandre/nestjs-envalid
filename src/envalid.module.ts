@@ -57,6 +57,11 @@ export interface EnvalidModuleConfig<T> {
    * See: https://github.com/motdotla/dotenv
    */
   useDotenv?: boolean;
+
+  /**
+   * A function that applies transformations to the cleaned env object
+   */
+  applyMiddleware?: (cleaned: T, rawEnv: unknown) => unknown;
 }
 
 @Module({})
@@ -66,7 +71,12 @@ export class EnvalidModule {
       /* eslint-disable-next-line @typescript-eslint/no-var-requires */
       require('dotenv').config();
     }
-    const { isGlobal, environment = process.env, options } = config;
+    const {
+      isGlobal,
+      environment = process.env,
+      options,
+      applyMiddleware = applyDefaultMiddleware,
+    } = config;
     let { validators } = config;
     if ('_specs' in validators) {
       validators = validators._specs;
@@ -78,7 +88,7 @@ export class EnvalidModule {
         useValue: customCleanEnv(
           environment,
           validators,
-          applyDefaultMiddleware,
+          applyMiddleware,
           options,
         ),
       },
