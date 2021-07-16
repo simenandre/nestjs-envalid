@@ -11,3 +11,4 @@ export {
   url,
   json,
 } from 'envalid';
+export * from './middleware';
