@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/cobraz/nestjs-envalid/compare/v1.0.1...v1.1.0) (2021-07-16)
+
+
+### Features
+
+* Add more nestjs related inspectables ([7fbfe5e](https://www.github.com/cobraz/nestjs-envalid/commit/7fbfe5ea79413030e90b703239e590d4e4104d79))
+* Add support for dotenv ([43ccbc8](https://www.github.com/cobraz/nestjs-envalid/commit/43ccbc83b50f9b064c75bc8bcbd7ef6453b8f29d))
+
 ### [1.0.1](https://www.github.com/cobraz/nestjs-envalid/compare/v1.0.0...v1.0.1) (2021-07-16)
 
 
