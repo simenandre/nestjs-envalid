@@ -60,11 +60,11 @@ import { ENVALID, Config } from './config';
 
 @Injectable()
 export class SomeService {
-  constructor(@Inject(ENVALID) private readonly envalid: Config) {}
+  constructor(@Inject(ENVALID) private readonly env: Config) {}
 
   someMethod() {
-    if (this.envalid.isProd) {
-      const other = this.envalid.HELLO_WORLD;
+    if (this.env.isProd) {
+      const other = this.env.HELLO_WORLD;
     }
   }
 }
