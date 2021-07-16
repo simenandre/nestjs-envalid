@@ -33,6 +33,6 @@ yarn add nestjs-envalid
 ## Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check
-[issues page](https://github.com/cobraz/jira-config/issues).
+[issues page](https://github.com/cobraz/nestjs-envalid/issues).
 
 Give a ⭐️ if this project helped you!
