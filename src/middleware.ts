@@ -25,6 +25,16 @@ export const strictProxyMiddleware = <T extends object>(
     'onApplicationBootstrap',
     'beforeApplicationShutdown',
     'onApplicationShutdown',
+    'constructor',
+    '__defineGetter__',
+    '__defineSetter__',
+    '__lookupGetter__',
+    '__lookupSetter__',
+    'isPrototypeOf',
+    'propertyIsEnumerable',
+    'toString',
+    'valueOf',
+    'toLocaleString',
 
     // For libs that use `then` checks to see if objects are Promises (see #74):
     'then',
