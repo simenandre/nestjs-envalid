@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/cobraz/nestjs-envalid/compare/v1.1.0...v1.2.0) (2021-07-16)
+
+
+### Features
+
+* Add applyMiddleware ([0d0afd9](https://www.github.com/cobraz/nestjs-envalid/commit/0d0afd9bcd6e201b61512b0c79b7a4e813113715))
+* Export middleware ([b458bf1](https://www.github.com/cobraz/nestjs-envalid/commit/b458bf1fbd71ebcd2748c784eae89e68e12dc078))
+
 ## [1.1.0](https://www.github.com/cobraz/nestjs-envalid/compare/v1.0.1...v1.1.0) (2021-07-16)
 
 
