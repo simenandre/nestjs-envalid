@@ -7,8 +7,8 @@
 [![codecov](https://codecov.io/gh/cobraz/nestjs-envalid/branch/main/graph/badge.svg)](https://codecov.io/gh/cobraz/nestjs-envalid)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8549751f50ac68b36842/maintainability)](https://codeclimate.com/github/cobraz/nestjs-envalid/maintainability)
 
-> [Envalid][] is a small library for validating and accessing environment variables
-> in Node.js (v8.12 or later) programs, aiming to:
+> [Envalid][] is a small library for validating and accessing environment
+> variables in Node.js (v8.12 or later) programs, aiming to:
 >
 > - ensure that your program only runs when all of its environment dependencies
 >   are met
@@ -30,9 +30,53 @@
 yarn add nestjs-envalid
 ```
 
+To improve readability you can configure the variables in a separate file named
+`config.ts`, like the example below:
+
+```typescript
+import { makeValidators, str, EnvalidModule } from 'nestjs-envalid';
+
+export const validators = makeValidators({
+  HELLO_WORLD: str(),
+});
+
+export type Config = Static<typeof validators>;
+```
+
+The `validators` can then be added to `EnvalidModule`, like so:
+
+```typescript
+import { validators } from './config';
+@Module({
+  imports: [EnvalidModule.forRoot({ validators })],
+})
+export class AppModule {}
+```
+
+To inject your configuration, you can do this:
+
+```typescript
+import { ENVALID, Config } from './config';
+
+@Injectable()
+export class SomeService {
+  constructor(@Inject(ENVALID) private readonly envalid: Config) {}
+
+  someMethod() {
+    if (this.envalid.isProd) {
+      const other = this.envalid.HELLO_WORLD;
+    }
+  }
+}
+```
+
 ## Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check
 [issues page](https://github.com/cobraz/nestjs-envalid/issues).
 
 Give a ⭐️ if this project helped you!
+
+```
+
+```
