@@ -9,9 +9,9 @@
     "node": ">=8.12"
   },
   "files": [
-    "dist"
+    "dist/src"
   ],
-  "main": "dist/plugin.js",
+  "main": "dist/src/plugin.js",
   "scripts": {
     "build": "tsc",
     "dev": "ts-node src/main.ts",
