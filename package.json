@@ -2,16 +2,13 @@
   "name": "nestjs-envalid",
   "version": "1.2.0",
   "description": "Envalid wrapper for NestJS validating and accessing environment variables!",
-  "repository": "git@github.com:cobraz/nestjs-envalid.git",
-  "author": "Simen A. W. Olsen",
+  "repository": "github:cobraz/nestjs-envalid",
   "license": "Apache-2.0",
-  "engines": {
-    "node": ">=8.12"
-  },
+  "author": "Simen A. W. Olsen",
+  "main": "dist/src/plugin.js",
   "files": [
     "dist/src"
   ],
-  "main": "dist/src/plugin.js",
   "scripts": {
     "build": "tsc",
     "dev": "ts-node src/main.ts",
@@ -21,6 +18,7 @@
   "eslintConfig": {
     "extends": "@indivorg/eslint-config"
   },
+  "dependencies": {},
   "devDependencies": {
     "@indivorg/eslint-config": "^1.0.4",
     "@nestjs/common": "7.6.15",
@@ -46,9 +44,11 @@
     "@nestjs/core": "^7",
     "envalid": "^7"
   },
+  "engines": {
+    "node": ">=8.12"
+  },
   "volta": {
     "node": "14.15.0",
     "yarn": "1.22.10"
-  },
-  "dependencies": {}
+  }
 }
