@@ -46,7 +46,7 @@ export type Config = Static<typeof validators>;
 The `validators` can then be added to `EnvalidModule`, like so:
 
 ```typescript
-import { makeValidators, num, Static } from 'nestjs-envalid';
+import { EnvalidModule } from 'nestjs-envalid';
 import { validators } from './config';
 
 @Module({
