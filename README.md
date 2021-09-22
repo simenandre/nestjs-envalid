@@ -34,10 +34,10 @@ To improve readability you can configure the variables in a separate file named
 `config.ts`, like the example below:
 
 ```typescript
-import { makeValidators, str, EnvalidModule } from 'nestjs-envalid';
+import { makeValidators, num, Static } from 'nestjs-envalid';
 
 export const validators = makeValidators({
-  HELLO_WORLD: str(),
+  PORT: num({ default: 3000 }),
 });
 
 export type Config = Static<typeof validators>;
