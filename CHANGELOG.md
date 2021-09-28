@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.2.1](https://www.github.com/cobraz/nestjs-envalid/compare/v1.2.0...v1.2.1) (2021-09-28)
+
+
+### Bug Fixes
+
+* Fix peerDependencies ([c4964ca](https://www.github.com/cobraz/nestjs-envalid/commit/c4964ca8fe30e8fe66f7f182aa40a1e09f428b5e))
+* Update dependencies ([51b6c0f](https://www.github.com/cobraz/nestjs-envalid/commit/51b6c0f9b73bf6d4ee0b6cc7cbc051d6d9d9d291))
+
 ## [1.2.0](https://www.github.com/cobraz/nestjs-envalid/compare/v1.1.0...v1.2.0) (2021-07-16)
 
 
