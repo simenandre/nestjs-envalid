@@ -1,5 +1,5 @@
-export * from './envalid.module';
-export * from './envalid.constants';
+export * from './envalid.module.js';
+export * from './envalid.constants.js';
 export {
   makeValidator,
   bool,
@@ -11,4 +11,4 @@ export {
   url,
   json,
 } from 'envalid';
-export * from './middleware';
+export * from './middleware.js';

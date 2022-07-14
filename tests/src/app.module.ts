@@ -5,7 +5,7 @@ import {
   Static,
   makeValidators,
   str,
-} from '../../src/plugin';
+} from '../../src/plugin.js';
 
 const validators = makeValidators({
   SERVER_URI: str(),

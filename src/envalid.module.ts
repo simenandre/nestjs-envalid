@@ -5,8 +5,8 @@ import {
   ValidatorSpec,
   customCleanEnv,
 } from 'envalid';
-import { ENVALID } from './envalid.constants';
-import { applyDefaultMiddleware } from './middleware';
+import { ENVALID } from './envalid.constants.js';
+import { applyDefaultMiddleware } from './middleware.js';
 
 export type Validators<T = unknown> = {
   [K in keyof T]: ValidatorSpec<T[K]>;
@@ -66,11 +66,14 @@ export interface EnvalidModuleConfig<T> {
 
 @Module({})
 export class EnvalidModule {
-  static forRoot<T>(config: EnvalidModuleConfig<T>): DynamicModule {
+  static async forRoot<T>(
+    config: EnvalidModuleConfig<T>,
+  ): Promise<DynamicModule> {
     if (config.useDotenv) {
-      /* eslint-disable-next-line @typescript-eslint/no-var-requires */
-      require('dotenv').config();
+      const dotenv = await import('dotenv');
+      dotenv.config();
     }
+
     const {
       isGlobal,
       environment = process.env,
@@ -78,6 +81,7 @@ export class EnvalidModule {
       applyMiddleware = applyDefaultMiddleware,
     } = config;
     let { validators } = config;
+
     if ('_specs' in validators) {
       validators = validators._specs;
     }

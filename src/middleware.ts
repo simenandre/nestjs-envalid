@@ -1,7 +1,7 @@
 /* eslint no-prototype-builtins: off */
 /* eslint @typescript-eslint/explicit-module-boundary-types: off */
 /* eslint @typescript-eslint/ban-types: off */
-import { CleanedEnvAccessors } from 'envalid';
+import type { CleanedEnvAccessors } from 'envalid';
 
 export const strictProxyMiddleware = <T extends object>(
   envObj: T,
