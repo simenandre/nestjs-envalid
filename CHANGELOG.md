@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/cobraz/nestjs-envalid/compare/v1.2.1...v2.0.0) (2022-07-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* Change to pure ESM
+
+### Code Refactoring
+
+* Change to pure ESM ([8d8f8f8](https://www.github.com/cobraz/nestjs-envalid/commit/8d8f8f845ccea464c622550306c6a06820b8925d))
+
 ### [1.2.1](https://www.github.com/cobraz/nestjs-envalid/compare/v1.2.0...v1.2.1) (2021-09-28)
 
 
