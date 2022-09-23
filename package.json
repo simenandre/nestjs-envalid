@@ -40,8 +40,8 @@
     "typescript": "^4.7.4"
   },
   "peerDependencies": {
-    "@nestjs/common": ">=7 <=8",
-    "@nestjs/core": ">=7 <=8",
+    "@nestjs/common": ">=7 <=9",
+    "@nestjs/core": ">=7 <=9",
     "envalid": "7.x.x"
   },
   "engines": {
