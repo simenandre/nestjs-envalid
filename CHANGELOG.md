@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/cobraz/nestjs-envalid/compare/v2.0.0...v2.1.0) (2022-09-23)
+
+
+### Features
+
+* add support for nestjs ^9 ([436fbc7](https://www.github.com/cobraz/nestjs-envalid/commit/436fbc701712865ba628c9e7c3087ae5b8f9ed09))
+
 ## [2.0.0](https://www.github.com/cobraz/nestjs-envalid/compare/v1.2.1...v2.0.0) (2022-07-14)
 
 
