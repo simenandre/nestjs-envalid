@@ -1,6 +1,6 @@
 {
   "name": "nestjs-envalid",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Envalid wrapper for NestJS validating and accessing environment variables!",
   "repository": "github:cobraz/nestjs-envalid",
   "license": "Apache-2.0",
