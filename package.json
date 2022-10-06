@@ -6,6 +6,7 @@
   "license": "Apache-2.0",
   "author": "Simen A. W. Olsen",
   "type": "module",
+  "types": "./dist/src/plugin.d.ts",
   "exports": "./dist/src/plugin.js",
   "files": [
     "./dist/src"
