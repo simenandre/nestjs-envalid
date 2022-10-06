@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.1](https://www.github.com/cobraz/nestjs-envalid/compare/v2.1.0...v2.1.1) (2022-10-06)
+
+
+### Bug Fixes
+
+* Use the 'types' entry in the package.json ([#17](https://www.github.com/cobraz/nestjs-envalid/issues/17)) ([aa94572](https://www.github.com/cobraz/nestjs-envalid/commit/aa94572dde816506a5f873de0b88b6f911359243))
+
 ## [2.1.0](https://www.github.com/cobraz/nestjs-envalid/compare/v2.0.0...v2.1.0) (2022-09-23)
 
 
