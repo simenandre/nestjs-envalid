@@ -31,7 +31,7 @@
     "@tsconfig/node16-strictest-esm": "^1.0.3",
     "@types/dotenv": "^8.2.0",
     "@types/jest": "^28.1.5",
-    "@types/node": "^14",
+    "@types/node": "^18.0.0",
     "dotenv": "^16.0.1",
     "envalid": "^7.3.1",
     "eslint": "^8.19.0",
