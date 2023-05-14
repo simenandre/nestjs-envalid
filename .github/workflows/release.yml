@@ -1,14 +1,11 @@
-name: CI
+name: Release to NPM
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
+  release:
+    types: [published]
 
 jobs:
-  test:
-    name: Testing on Node LTS
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -20,6 +17,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: lts/*
+          registry-url: https://registry.npmjs.org
           cache: pnpm
 
       - name: Install dependencies 📦️
@@ -28,8 +26,6 @@ jobs:
       - name: Build 🔨
         run: pnpm build
 
-      - name: Lint 💅
-        run: pnpm lint
-
-      - name: Test 🧪
-        run: yarn test --passWithNoTests
+      - uses: simenandre/publish-with-pnpm@v1
+        with:
+          npm-auth-token: ${{ secrets.NPM_TOKEN }}
