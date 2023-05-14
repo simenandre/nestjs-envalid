@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@bjerk/eslint-config": "^2.0.1",
-    "@nestjs/common": "9.0.3",
+    "@nestjs/common": "9.4.0",
     "@nestjs/core": "9.0.3",
     "@nestjs/platform-express": "^9.0.3",
     "@nestjs/testing": "^9.0.3",
