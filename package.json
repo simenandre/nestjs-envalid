@@ -8,13 +8,16 @@
   "type": "module",
   "exports": "./dist/src/plugin.js",
   "types": "./dist/src/plugin.d.ts",
+  "packageManager": "pnpm@8.5.0",
   "files": [
     "./dist/src"
   ],
   "scripts": {
     "build": "tsc",
     "lint": "eslint .",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "eslintConfig": {
     "extends": "@bjerk/eslint-config"
@@ -47,9 +50,5 @@
   },
   "engines": {
     "node": ">=14.16"
-  },
-  "volta": {
-    "node": "16.20.0",
-    "yarn": "1.22.10"
   }
 }
