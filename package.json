@@ -18,10 +18,10 @@
   },
   "devDependencies": {
     "@bjerk/eslint-config": "^5.2.0",
-    "@nestjs/common": "8.0.7",
-    "@nestjs/core": "8.0.7",
-    "@nestjs/platform-express": "^8.0.7",
-    "@nestjs/testing": "^8.0.7",
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/testing": "^10.0.0",
     "@types/dotenv": "^8.2.0",
     "@types/jest": "^27.0.2",
     "@types/node": "^14",
@@ -37,8 +37,8 @@
     "typescript": "^5.1"
   },
   "peerDependencies": {
-    "@nestjs/common": ">=7 <=9",
-    "@nestjs/core": ">=7 <=9",
+    "@nestjs/common": "<=10",
+    "@nestjs/core": "<=10",
     "envalid": "7.x.x"
   },
   "engines": {
