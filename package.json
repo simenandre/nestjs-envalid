@@ -20,7 +20,10 @@
     "format:check": "prettier --check ."
   },
   "eslintConfig": {
-    "extends": "@bjerk/eslint-config"
+    "extends": "@bjerk/eslint-config",
+    "parserOptions": {
+      "project": true
+    }
   },
   "devDependencies": {
     "@bjerk/eslint-config": "^4.0.0",
