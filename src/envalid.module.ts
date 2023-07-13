@@ -1,12 +1,31 @@
 import { DynamicModule, Module } from '@nestjs/common';
 import {
   CleanOptions,
+  CleanedEnv,
   CleanedEnvAccessors,
   ValidatorSpec,
   customCleanEnv,
+  strictProxyMiddleware,
 } from 'envalid';
 import { ENVALID } from './envalid.constants.js';
-import { applyDefaultMiddleware } from './middleware.js';
+
+export const nestJsInspectables = [
+  'onModuleInit',
+  'onModuleDestroy',
+  'onApplicationBootstrap',
+  'beforeApplicationShutdown',
+  'onApplicationShutdown',
+  'constructor',
+  '__defineGetter__',
+  '__defineSetter__',
+  '__lookupGetter__',
+  '__lookupSetter__',
+  'isPrototypeOf',
+  'propertyIsEnumerable',
+  'toString',
+  'valueOf',
+  'toLocaleString',
+];
 
 export type Validators<T = unknown> = {
   [K in keyof T]: ValidatorSpec<T[K]>;
@@ -61,7 +80,7 @@ export interface EnvalidModuleConfig<T> {
   /**
    * A function that applies transformations to the cleaned env object
    */
-  applyMiddleware?: (cleaned: T, rawEnv: unknown) => unknown;
+  applyMiddleware?: (cleaned: CleanedEnv<T>, rawEnv: unknown) => unknown;
 }
 
 @Module({})
@@ -78,7 +97,7 @@ export class EnvalidModule {
       isGlobal,
       environment = process.env,
       options,
-      applyMiddleware = applyDefaultMiddleware,
+      applyMiddleware,
     } = config;
     let { validators } = config;
 
@@ -92,7 +111,15 @@ export class EnvalidModule {
         useValue: customCleanEnv(
           environment,
           validators,
-          applyMiddleware,
+          (cleaned, rawEnv) => {
+            if (applyMiddleware) {
+              return applyMiddleware(cleaned, rawEnv);
+            }
+
+            return strictProxyMiddleware(cleaned, rawEnv, {
+              extraInspectables: nestJsInspectables,
+            });
+          },
           options,
         ),
       },
