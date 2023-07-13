@@ -1,12 +1,8 @@
 import { DynamicModule, Module } from '@nestjs/common';
 import {
-  CleanOptions,
-  CleanedEnv,
   CleanedEnvAccessors,
   ValidatorSpec,
-  cleanEnv,
   customCleanEnv,
-  str,
   strictProxyMiddleware,
 } from 'envalid';
 import { ENVALID } from './envalid.constants.js';
