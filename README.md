@@ -8,7 +8,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/8549751f50ac68b36842/maintainability)](https://codeclimate.com/github/cobraz/nestjs-envalid/maintainability)
 
 > [Envalid][] is a small library for validating and accessing environment
-> variables in Node.js (v8.12 or later) programs, aiming to:
+> variables in Node.js (v14.16 or later) programs, aiming to:
 >
 > - ensure that your program only runs when all of its environment dependencies
 >   are met
@@ -17,6 +17,13 @@
 > - give you an immutable API for your environment variables, so they don't
 >   change from under you while the program is running
 
+This package is [pure ESM][esm], which requires you to add `"type": "module"` to
+your `package.json` file. If you're using CommonJS, you can for now [use the `legacy`
+tag on NPM to use the latest version of v1][v1]. The legacy version will be supported
+for now, but we will eventually drop support for it.
+
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+[v1]: #common-js--version-1
 ---
 
 `nestjs-envalid` is simple wrapper on top of [envalid][] made for [NestJS][]
@@ -90,6 +97,18 @@ import { validators } from './config';
 export class AppModule {}
 ```
 
+## Common JS / Version 1
+
+If you need either support for Node 8.12 or above or CommonJS, you can use the
+legacy version of this package. To do so, you'll need to use the `legacy` tag.
+
+```shell
+yarn add nestjs-envalid@legacy envalid
+```
+
+The legacy version will be supported for now, but we will eventually drop support for it.
+We will notify you when we eventually do, at least a few months before, but you should
+migrate to ESM as soon as possible.
 
 ## Contributing
 
