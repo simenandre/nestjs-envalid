@@ -17,19 +17,20 @@
 > - give you an immutable API for your environment variables, so they don't
 >   change from under you while the program is running
 
-This package is [pure ESM][esm], which requires you to add `"type": "module"` to
-your `package.json` file. If you're using CommonJS, you can for now [use the `legacy`
-tag on NPM to use the latest version of v1][v1]. The legacy version will be supported
-for now, but we will eventually drop support for it.
-
-[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
-[v1]: #common-js--version-1
 ---
 
 `nestjs-envalid` is simple wrapper on top of [envalid][] made for [NestJS][]
 
 [envalid]: https://github.com/af/envalid
 [nestjs]: https://github.com/nestjs/nest
+
+**Note**: This package is [pure ESM][esm], which requires you to add `"type": "module"` to
+your `package.json` file. If you're using CommonJS, you can for now [use the `legacy`
+tag on NPM to use the latest version of v1][v1]. The legacy version will be supported
+for now, but we will eventually drop support for it.
+
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+[v1]: #common-js--version-1
 
 ## Quickstart
 
