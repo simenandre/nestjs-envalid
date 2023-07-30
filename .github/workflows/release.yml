@@ -31,7 +31,7 @@ jobs:
 
       - name: Publish 🚀
         shell: bash
-        run: pnpm publish --access public --tag v1 --no-git-checks
+        run: pnpm publish --access public --tag legacy --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
