@@ -1,12 +1,29 @@
 import { DynamicModule, Module } from '@nestjs/common';
 import {
-  CleanOptions,
   CleanedEnvAccessors,
   ValidatorSpec,
   customCleanEnv,
+  strictProxyMiddleware,
 } from 'envalid';
 import { ENVALID } from './envalid.constants.js';
-import { applyDefaultMiddleware } from './middleware.js';
+
+export const nestJsInspectables = [
+  'onModuleInit',
+  'onModuleDestroy',
+  'onApplicationBootstrap',
+  'beforeApplicationShutdown',
+  'onApplicationShutdown',
+  'constructor',
+  '__defineGetter__',
+  '__defineSetter__',
+  '__lookupGetter__',
+  '__lookupSetter__',
+  'isPrototypeOf',
+  'propertyIsEnumerable',
+  'toString',
+  'valueOf',
+  'toLocaleString',
+];
 
 export type Validators<T = unknown> = {
   [K in keyof T]: ValidatorSpec<T[K]>;
@@ -30,7 +47,7 @@ export type Static<T extends MakeValidatorsResult> = Readonly<
   T['values'] & CleanedEnvAccessors
 >;
 
-export interface EnvalidModuleConfig<T> {
+export interface EnvalidModuleConfig<S, MW> {
   // An object containing your env vars (default is `process.env`)
   environment?: unknown;
 
@@ -38,13 +55,7 @@ export interface EnvalidModuleConfig<T> {
    * Envalid validators
    * See: https://github.com/af/envalid#api
    */
-  validators: Validators<T> | MakeValidatorsResult<T>;
-
-  /**
-   * Envalid options
-   * See: https://github.com/af/envalid
-   */
-  options?: CleanOptions<T>;
+  validators: Validators<S> | MakeValidatorsResult<S>;
 
   /**
    * If "true", registers `ConfigModule` as a global module.
@@ -61,25 +72,20 @@ export interface EnvalidModuleConfig<T> {
   /**
    * A function that applies transformations to the cleaned env object
    */
-  applyMiddleware?: (cleaned: T, rawEnv: unknown) => unknown;
+  applyMiddleware?: <T extends object>(cleaned: T, rawEnv: unknown) => MW;
 }
 
 @Module({})
 export class EnvalidModule {
-  static async forRoot<T>(
-    config: EnvalidModuleConfig<T>,
+  static async forRoot<S, MW>(
+    config: EnvalidModuleConfig<S, MW>,
   ): Promise<DynamicModule> {
     if (config.useDotenv) {
       const dotenv = await import('dotenv');
       dotenv.config();
     }
 
-    const {
-      isGlobal,
-      environment = process.env,
-      options,
-      applyMiddleware = applyDefaultMiddleware,
-    } = config;
+    const { isGlobal, environment = process.env, applyMiddleware } = config;
     let { validators } = config;
 
     if ('_specs' in validators) {
@@ -89,12 +95,15 @@ export class EnvalidModule {
     const providers = [
       {
         provide: ENVALID,
-        useValue: customCleanEnv(
-          environment,
-          validators,
-          applyMiddleware,
-          options,
-        ),
+        useValue: customCleanEnv(environment, validators, (cleaned, rawEnv) => {
+          if (applyMiddleware) {
+            return applyMiddleware(cleaned, rawEnv);
+          }
+
+          return strictProxyMiddleware(cleaned, rawEnv, {
+            extraInspectables: nestJsInspectables,
+          });
+        }),
       },
     ];
 
