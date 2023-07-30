@@ -26,6 +26,18 @@ jobs:
       - name: Build 🔨
         run: pnpm build
 
-      - uses: simenandre/publish-with-pnpm@v1
+      - name: Set version to release tag 📝
+        run: pnpm version from-git --no-commit-hooks --no-git-tag-version --allow-same-version
+
+      - name: Publish 🚀
+        shell: bash
+        run: pnpm publish --access public --tag v1 --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Push version changes to main branch
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          npm-auth-token: ${{ secrets.NPM_TOKEN }}
+          commit_message: "chore: release ${{ github.event.release.tag_name }}"
+          branch: v1
+          file_pattern: package.json
