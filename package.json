@@ -35,6 +35,7 @@
     "reflect-metadata": "0.1.13",
     "ts-jest": "^29.0.0",
     "ts-node": "^10.2.1",
+    "tslib": "^2.6.1",
     "typescript": "^5.1.6"
   },
   "peerDependencies": {

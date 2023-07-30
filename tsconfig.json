@@ -7,8 +7,6 @@
     "importHelpers": true,
     "declaration": true,
     "sourceMap": true,
-    "target": "ES2021",
-    "skipLibCheck": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noUnusedLocals": true,
