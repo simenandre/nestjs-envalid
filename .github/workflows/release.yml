@@ -1,4 +1,4 @@
-name: Release to NPM
+name: Release v1 to NPM
 
 on:
   release:
