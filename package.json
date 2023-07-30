@@ -38,8 +38,8 @@
     "typescript": "^5.1.6"
   },
   "peerDependencies": {
-    "@nestjs/common": "<=10",
-    "@nestjs/core": "<=10",
+    "@nestjs/common": ">=7 <=10",
+    "@nestjs/core": ">=7 <=10",
     "envalid": "7.x.x"
   },
   "engines": {
