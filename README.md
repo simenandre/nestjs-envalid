@@ -98,6 +98,17 @@ import { validators } from './config';
 export class AppModule {}
 ```
 
+## v3 / Next
+
+There's an upcoming v3 release which uses `envalid` v8, you can try it out by using the
+`next` tag:
+
+```shell
+yarn add nestjs-envalid@next envalid
+```
+
+[Read more here in #53](https://github.com/simenandre/nestjs-envalid/issues/53)
+
 ## Common JS / Version 1
 
 If you need either support for Node 8.12 or above or CommonJS, you can use the
