@@ -26,7 +26,7 @@
     }
   },
   "devDependencies": {
-    "@bjerk/eslint-config": "^4.0.0",
+    "@bjerk/eslint-config": "^5.0.0",
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
