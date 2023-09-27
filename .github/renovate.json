@@ -1,6 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
-  "lockFileMaintenance": { "enabled": true, "automerge": true },
-  "rangeStrategy": "replace"
+  "extends": ["github>bjerkio/workflows", "github>bjerkio/workflows:pnpm"]
 }
