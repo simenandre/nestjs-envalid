@@ -8,7 +8,7 @@
   "type": "module",
   "exports": "./dist/src/plugin.js",
   "types": "./dist/src/plugin.d.ts",
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "pnpm@8.10.0",
   "files": [
     "./dist/src"
   ],
