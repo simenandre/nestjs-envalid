@@ -36,8 +36,8 @@ devDependencies:
     specifier: ^16.0.1
     version: 16.3.1
   envalid:
-    specifier: ^7.3.1
-    version: 7.3.1
+    specifier: ^8.0.0
+    version: 8.2.0
   eslint:
     specifier: ^8.19.0
     version: 8.54.0
@@ -1898,11 +1898,11 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /envalid@7.3.1:
-    resolution: {integrity: sha512-KL1YRwn8WcoF/Ty7t+yLLtZol01xr9ZJMTjzoGRM8NaSU+nQQjSWOQKKJhJP2P57bpdakJ9jbxqQX4fGTOicZg==}
-    engines: {node: '>=8.12'}
+  /envalid@8.2.0:
+    resolution: {integrity: sha512-CkPvea95dwMYE1wnKX5mQXkOpiMs9O+ncv8NqZy+gW7FuzpUp06KTdUHb18xFG8CqQHmfmRqGLF5DuGaBWNrSw==}
+    engines: {node: '>=18'}
     dependencies:
-      tslib: 2.3.1
+      tslib: 2.8.1
     dev: true
 
   /error-ex@1.3.2:
@@ -4647,12 +4647,12 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
-  /tslib@2.3.1:
-    resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
-    dev: true
-
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+    dev: true
+
+  /tslib@2.8.1:
+    resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
     dev: true
 
   /tsutils@3.21.0(typescript@4.9.5):
