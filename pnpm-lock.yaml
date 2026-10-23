@@ -33,8 +33,8 @@ devDependencies:
     specifier: ^18.0.0
     version: 18.18.10
   dotenv:
-    specifier: ^16.0.1
-    version: 16.3.1
+    specifier: ^18.0.0
+    version: 18.0.9
   envalid:
     specifier: ^7.3.1
     version: 7.3.1
@@ -964,7 +964,7 @@ packages:
     resolution: {integrity: sha512-ylSC9GhfRH7m1EUXBXofhgx4lUWmFeQDINW5oLuS+gxWdfUeW4zJdeVTYVkexEW+e2VUvlZR2kGnGGipAWR7kw==}
     deprecated: This is a stub types definition. dotenv provides its own type definitions, so you do not need this installed.
     dependencies:
-      dotenv: 16.3.1
+      dotenv: 18.0.9
     dev: true
 
   /@types/graceful-fs@4.1.9:
@@ -1863,9 +1863,10 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /dotenv@16.3.1:
-    resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
+  /dotenv@18.0.9:
+    resolution: {integrity: sha512-3fVOW4cB02R066PUSwn8O4TJyz9NckQl7F81blIbaq9jKBm2tSmOKky7ZHIXzGvkVPXCSn6jkpziBPZdGFs8Tw==}
     engines: {node: '>=12'}
+    hasBin: true
     dev: true
 
   /eastasianwidth@0.2.0:
